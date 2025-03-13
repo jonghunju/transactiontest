@@ -6,7 +6,11 @@ import org.springframework.data.mongodb.core.mapping.Document
 @Document(collection = "job")
 class Job(
     @Id
-    val id: String,
-    val name: String
+    var id: String,
+    var name: String
 ) {
+
+    fun changeName(name:String){
+        this.name= name
+    }
 }

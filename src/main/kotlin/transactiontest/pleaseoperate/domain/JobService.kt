@@ -11,7 +11,7 @@ class JobService(
 
 
     @Transactional
-    suspend fun please() {
+    suspend fun rollback() {
         val job1 = Job(
             id = ObjectId.get().toHexString(),
             name = "job1"
@@ -23,6 +23,15 @@ class JobService(
         jobRepository.save(job1)
         jobRepository.save(job2)
         throw RuntimeException("제발 롤백 되자.")
+    }
+
+    @Transactional
+    suspend fun dirtyCheck():String{
+        val job = jobRepository.findByName("job1")
+
+        job.changeName("changed")
+
+        return "success"
     }
 
 

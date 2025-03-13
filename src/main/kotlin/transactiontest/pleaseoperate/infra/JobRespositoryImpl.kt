@@ -12,4 +12,8 @@ class JobRespositoryImpl(
         jobCoroutineRepository.save(job)
         println("save")
     }
+
+    override suspend fun findByName(s: String): Job {
+        return jobCoroutineRepository.findFirstByName(s)
+    }
 }
