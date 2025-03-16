@@ -13,3 +13,4 @@ class MongoConfig {
         return ReactiveMongoTransactionManager(reactiveMongoDatabaseFactory)
     }
 }
+

@@ -1,7 +1,7 @@
 package transactiontest.pleaseoperate.application
 
 import org.springframework.stereotype.Component
-import transactiontest.pleaseoperate.domain.JobService
+import transactiontest.pleaseoperate.domain.service.job.JobService
 
 @Component
 class JobFacade(
